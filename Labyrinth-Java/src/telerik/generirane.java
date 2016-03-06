@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-
+// this is probably a spelling error
 public class generirane {
 	public boolean isVisited[][] = new boolean[7][7];
 	public char maze[][] = new char[7][7];
