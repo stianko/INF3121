@@ -214,6 +214,7 @@ public class generirane {
 
 	void swapCells(int currentRow, int newRow, int currentColumn, int newColumn){
 		// pointless as its always true
+		//Remove if-statement
 		boolean evaluate=true;//evaluate()
 		if(evaluate) {
 			char previousCell = maze[currentRow][currentColumn];
