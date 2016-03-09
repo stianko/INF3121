@@ -105,7 +105,7 @@ public class GenericLane {
 		if (validLeftMove(firstLetter)) moveLeft();
 		else if (validRightMove(firstLetter)) moveRight();
 		else if (validUpMove(firstLetter)) moveUp();
-		else if (validUpMove(firstLetter)) moveDown();
+		else if (validDownMove(firstLetter)) moveDown();
 		else {
 			System.out.println("Invalid move!");
 			printMaze();
