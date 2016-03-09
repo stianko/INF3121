@@ -1,70 +1,63 @@
-package telerik;
-
 import java.util.LinkedList;
 
-public class HighScoreBoard {
-	LinkedList list;//private. Also should this be initialized to type player?
-	public final int boardSize = 5;
-	public HighScoreBoard(){
-		list = new LinkedList();
-	}
 
+public class HighScoreBoard {
+	LinkedList<Player> playerList;
+	public final int boardSize = 5;
+
+	public HighScoreBoard(){
+		playerList = new LinkedList<Player>();
+	}
+	
 	public boolean addPlayerToChart(Player player){
-		if(list.size()==0){
-			// should be caught
-			list.addFirst(player);
+		if(playerList.size() == 0){
+			playerList.addFirst(player);
 			return true;
-		}
-		Player pl = (Player) list.get(list.size()-1);
-		if((list.size()>0)&&(list.size()<boardSize)){
-			if(player.movesCount>pl.movesCount){
-				// should be caught
-				list.addLast(player);
+		}	
+		Player lastPlayer = playerList.getLast();
+
+		if(isLessThanFivePlayers()){
+			if(player.movesCount > lastPlayer.movesCount){
+				playerList.addLast(player);
 				return true;
 			}
-			int index = 0;
-			while(index<list.size()){
-				pl = (Player) list.get(index);
-				if(player.movesCount<=pl.movesCount){
 
-					//pointless
-					{
-						// should be caught
-						list.add(index,player);
-					}
+			int index = 0;
+			while(index < playerList.size()){
+				lastPlayer = playerList.get(index);
+				if(player.movesCount <= lastPlayer.movesCount){
+					playerList.add(index,player);
 					return true;
 				}
 				index++;
 			}
 		}
-		// cyclomatic complexity too high
-		// merge ifs
-		if((list.size()==boardSize)) {
-			if((player.movesCount<pl.movesCount)){
-				list.remove(list.size() - 1);
-				int index = 0;
-				while (index < list.size()) {
-					pl = (Player) list.get(index);
-					if (player.movesCount <= pl.movesCount) {
-						list.add(index, player);
-//spacing
 
-						return true;
-					}
-					index++;
+		if ((playerList.size() == boardSize) && (player.movesCount < lastPlayer.movesCount)) {
+			playerList.remove(playerList.size() - 1);
+			int index = 0;
+			while (index < playerList.size()) {
+				lastPlayer = playerList.get(index);
+				if (player.movesCount <= lastPlayer.movesCount) {
+					playerList.add(index, player);
+					return true;
 				}
+				index++;
 			}
 		}
+
 		return false;
 	}
-	void printBoard(LinkedList list){
+
+	private boolean isLessThanFivePlayers(){
+		return (playerList.size() < boardSize);
+	}
+
+	void printBoard(LinkedList<Player> list){
 		System.out.println("Score :");
-		for(int i=0;i<list.size();i++){
-			Player p = (Player) list.get(i);
-			// use s.o.printf to merge three prints
-			System.out.print((i+1)+". Name - "+p.name+" ");
-			System.out.print("Escaped in "+p.movesCount+" moves");
-			System.out.println();
+		for(int i = 0; i < list.size(); i++){
+			Player p = list.get(i);
+			System.out.print((i + 1) + ". Name - " + p.name + " Escaped in " + p.movesCount + " moves\n");
 		}
 	}
 }
