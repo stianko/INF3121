@@ -1,5 +1,6 @@
-import java.util.Scanner;
 package telerik;
+import java.util.Scanner;
+
 
 
 public class Game {
