@@ -1,4 +1,5 @@
 import java.util.Scanner;
+package telerik;
 
 
 public class Game {
