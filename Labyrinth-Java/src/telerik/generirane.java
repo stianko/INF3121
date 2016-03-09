@@ -37,7 +37,7 @@ public class generirane {
 				}
 			}
 		}
-		// function is alread a boolean
+		// function is already a boolean
 		// replace with while(!isSolvable)
 		while(isSolvable(3, 3)==false);
 		playersCurrentRow = 3;
