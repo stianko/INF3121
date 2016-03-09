@@ -37,7 +37,7 @@ public class generirane {
 				}
 			}
 		}
-		// function is alread a boolean
+		// function is already a boolean
 		// replace with while(!isSolvable)
 		while(isSolvable(3, 3)==false);
 		playersCurrentRow = 3;
@@ -207,6 +207,7 @@ public class generirane {
 
 	void swapCells(int currentRow, int newRow, int currentColumn, int newColumn){
 		// pointless as its always true
+		//Remove if-statement
 		boolean evaluate=true;//evaluate()
 		if(evaluate) {
 			char previousCell = maze[currentRow][currentColumn];
