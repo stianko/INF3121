@@ -159,17 +159,10 @@ public class generirane {
 						playersCurrentColumn, playersCurrentColumn + 1);
 				System.out.println();
 				// all this is pointless as this variable is global
-				{
-					{
 						printMaze();
-						{
-							{
 								playersCurrentColumn++;
 								playersMovesCount++;
-							}
-						}
-					}
-				}
+
 			} else {
 				System.out.println("Invalid move!");
 				printMaze();
