@@ -34,7 +34,7 @@ public class GenericLane {
 	}
 
 	public boolean isSolvable(int row, int col){
-		if(hasExit(row, col)) isExit = true;
+		if(hasExit(row, col)) return isExit = true;
 
 		if (isOpenCheck(row, -1, col, 0)){
 			isVisited[row][col] = true;
