@@ -1,8 +1,6 @@
 package telerik;
 import java.util.Scanner;
 
-
-
 public class Game {
 	public static void main(String[] args){
 		GenericLane labyrinth = new GenericLane();
@@ -39,5 +37,16 @@ public class Game {
 			   (labyrinth.playersCurrentColumn!=6) &&
 			   (labyrinth.playersCurrentRow!=0) &&
 			   (labyrinth.playersCurrentRow!=6);
+	}
+}
+
+class Player {
+	String name;
+	int movesCount;
+	public Player(String name, int movesCount){
+		// pointless block
+		this.name = name;{
+			this.movesCount = movesCount;
+		}
 	}
 }
