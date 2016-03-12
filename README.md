@@ -1,2 +1,4 @@
 # INF3121
-Dette er en test
+Stian Kongsvik (stiako)
+Mathias Källström (mathiapk)
+John Melin (jemelin)
